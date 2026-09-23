@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
+import { SiteHeader } from "@/components/site-header";
 
 const serif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   },
   description:
     "Raising spiritually mature, Christ-centered worshipers who serve with excellence and integrity. A youth-focused Christian worship ministry based in Addis Ababa, Ethiopia.",
-  metadataBase: new URL("https://surrenderworship.org"), // placeholder — update when domain is ready
+  metadataBase: new URL("https://surrenderworship.org"),
 };
 
 export default function RootLayout({
@@ -33,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${serif.variable} ${sans.variable}`}>
       <body className="bg-background text-foreground font-sans antialiased">
+        <SiteHeader />
         {children}
       </body>
     </html>
