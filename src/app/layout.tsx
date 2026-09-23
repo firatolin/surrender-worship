@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 
 const serif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -33,9 +34,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${serif.variable} ${sans.variable}`}>
-      <body className="bg-background text-foreground font-sans antialiased">
+      <body className="bg-background text-foreground font-sans antialiased flex min-h-screen flex-col">
         <SiteHeader />
-        <main>{children}</main>
+        <main className="flex-1">{children}</main>
+        <SiteFooter />
       </body>
     </html>
   );
