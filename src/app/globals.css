@@ -2,26 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================
+   SURRENDER WORSHIP MINISTRY — BRAND DESIGN SYSTEM
+   ============================================================
+   Rule of thumb:
+     ~70% black/charcoal
+     ~20% ivory
+     ~10% gold
+   Headings are WARM IVORY, not gold.
+   Gold is reserved for CTAs, dividers, and icons.
+   ============================================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand palette */
+  --brand-black: #080b06;
+  --brand-charcoal: #191d16;
+  --brand-gold: #e8b94f;
+  --brand-antique-gold: #b68a2c;
+  --brand-light-gold: #f5d77a;
+  --brand-ivory: #f5e6b8;
+
+  /* Website UI tokens */
+  --background: var(--brand-black);
+  --foreground: #e8e7e0;
+
+  --primary: var(--brand-gold);
+  --primary-foreground: var(--brand-black);
+
+  --secondary: var(--brand-charcoal);
+  --border: #39382c;
+  --accent: var(--brand-light-gold);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "kern", "liga", "calt";
+  }
+
+  /* Headings default to warm ivory, per the design system. */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--brand-ivory);
+    font-family: var(--font-serif), Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+
+  /* Restrained link style — underline offset, color shift on hover only. */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Selection uses brand gold. */
+  ::selection {
+    background-color: var(--brand-gold);
+    color: var(--brand-black);
+  }
+
+  /* Focus ring uses antique gold — visible, on-brand, not garish. */
+  :focus-visible {
+    outline: 2px solid var(--brand-antique-gold);
+    outline-offset: 2px;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  /* Reusable editorial container — consistent horizontal rhythm site-wide. */
+  .container-editorial {
+    width: 100%;
+    max-width: 72rem; /* 1152px */
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  /* A thin gold divider, used between sections. */
+  .divider-gold {
+    height: 1px;
+    background-color: var(--brand-antique-gold);
+    opacity: 0.4;
   }
 }
