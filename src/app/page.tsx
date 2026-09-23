@@ -7,14 +7,15 @@ export default function HomePage() {
       {/* ── Vision ──────────────────────────────────────── */}
       <section className="border-b border-border">
         <div className="container-editorial py-24 md:py-32">
-          <p className="text-xs uppercase tracking-widest text-brand-antique-gold">
+          {/* <p className="text-xs uppercase tracking-widest text-brand-antique-gold">
             Vision
-          </p>
+          </p> */}
 
           <h1 className="mt-6 font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-tightest text-brand-ivory max-w-4xl">
-            Raising spiritually mature, Christ-centered worshipers who serve
-            with excellence and integrity.
-          </h1>
+            Surrender Worship Ministry.
+          </h1> 
+          <br></br>
+          <p>Raising spiritually mature, Christ-centered worshipers who serve with excellence and integrity.</p>
         </div>
       </section>
 
@@ -23,9 +24,9 @@ export default function HomePage() {
         <div className="container-editorial py-24 md:py-32">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
             <div className="md:col-span-4">
-              <p className="text-xs uppercase tracking-widest text-brand-antique-gold">
+              {/* <p className="text-xs uppercase tracking-widest text-brand-antique-gold">
                 Home
-              </p>
+              </p> */}
             </div>
             <div className="md:col-span-8">
               <p className="text-lg md:text-xl leading-relaxed text-foreground/85 max-w-3xl">

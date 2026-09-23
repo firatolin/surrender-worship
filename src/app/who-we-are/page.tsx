@@ -14,9 +14,9 @@ export default function WhoWeArePage() {
       {/* ── Who We Are ──────────────────────────────────── */}
       <section className="border-b border-border">
         <div className="container-editorial py-24 md:py-32">
-          <p className="text-xs uppercase tracking-widest text-brand-antique-gold">
+          {/* <p className="text-xs uppercase tracking-widest text-brand-antique-gold">
             Who We Are
-          </p>
+          </p> */}
 
           <h1 className="mt-6 font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-tightest text-brand-ivory max-w-4xl">
             Who We Are
@@ -29,9 +29,9 @@ export default function WhoWeArePage() {
         <div className="container-editorial py-24 md:py-32">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
             <div className="md:col-span-4">
-              <p className="text-xs uppercase tracking-widest text-brand-antique-gold">
+              {/* <p className="text-xs uppercase tracking-widest text-brand-antique-gold">
                 Who We Are
-              </p>
+              </p> */}
             </div>
             <div className="md:col-span-8">
               <p className="text-lg md:text-xl leading-relaxed text-foreground/85 max-w-3xl">
