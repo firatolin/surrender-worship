@@ -1,101 +1,136 @@
-import Image from "next/image";
+import { ButtonLink } from "@/components/ui/button-link";
+import { Eyebrow } from "@/components/ui/eyebrow";
 
-export default function Home() {
+const pillars = [
+  {
+    title: "Voice",
+    body: "Training worshipers to sing with clarity, reverence, and conviction — the voice as an instrument of service.",
+  },
+  {
+    title: "Heart",
+    body: "Cultivating a posture of surrender before skill. The inner life shapes the outer offering.",
+  },
+  {
+    title: "Character & Leadership",
+    body: "Raising young leaders who carry integrity on and off the stage — in the church, the home, and the community.",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      {/* ── Hero ─────────────────────────────────────────── */}
+      <section className="border-b border-border">
+        <div className="container-editorial py-24 md:py-32">
+          <Eyebrow>Surrender Worship Ministry · Addis Ababa</Eyebrow>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <h1 className="mt-6 font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-tightest text-brand-ivory max-w-3xl">
+            Raising spiritually mature, Christ-centered worshipers who serve
+            with excellence and integrity.
+          </h1>
+
+          <p className="mt-8 text-lg leading-relaxed text-foreground/80 max-w-2xl">
+            A youth-focused Christian worship ministry equipping singers,
+            musicians, and leaders — through Gospel teaching, music, and the
+            arts.
+          </p>
+
+          <div className="mt-10 flex flex-wrap gap-4">
+            <ButtonLink href="/services" variant="primary">
+              Explore Our Services
+            </ButtonLink>
+            <ButtonLink href="/who-we-are" variant="outline">
+              Who We Are
+            </ButtonLink>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* ── Mission intro ───────────────────────────────── */}
+      <section>
+        <div className="container-editorial py-24 md:py-32">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+            <div className="md:col-span-4">
+              <Eyebrow>Our Mission</Eyebrow>
+            </div>
+            <div className="md:col-span-8">
+              <p className="font-serif text-2xl md:text-3xl leading-snug text-brand-ivory">
+                To empower worshipers, singers, musicians, and leaders — not
+                only in skill, but in spirit.
+              </p>
+              <div className="mt-8 space-y-5 text-foreground/80 leading-relaxed max-w-2xl">
+                <p>
+                  Surrender Worship Ministry exists to see young people grow
+                  into the fullness of their calling. We believe worship is
+                  more than performance — it is a life offered up, day after
+                  day, in every arena of life.
+                </p>
+                <p>
+                  Through vocal coaching, choir development, music theory,
+                  worship training, personal development, and counselling, we
+                  walk alongside young believers as they grow in both
+                  musicianship and faith.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── A Ministry Beyond Music ─────────────────────── */}
+      <section className="border-t border-border bg-secondary">
+        <div className="container-editorial py-24 md:py-32">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+            <div className="md:col-span-4">
+              <Eyebrow>A Ministry Beyond Music</Eyebrow>
+              <h2 className="mt-6 font-serif text-3xl md:text-4xl leading-tight text-brand-ivory">
+                What we do goes far beyond the stage.
+              </h2>
+              <p className="mt-6 text-foreground/75 leading-relaxed">
+                Worship is formed in the quiet places — in the heart, the mind,
+                the character, and the way we lead. We invest in all of it.
+              </p>
+            </div>
+
+            <div className="md:col-span-8 md:pl-12">
+              <ul className="divide-y divide-border">
+                {pillars.map((pillar) => (
+                  <li key={pillar.title} className="py-8 first:pt-0 last:pb-0">
+                    <h3 className="font-serif text-xl text-brand-ivory">
+                      {pillar.title}
+                    </h3>
+                    <p className="mt-3 text-foreground/75 leading-relaxed max-w-2xl">
+                      {pillar.body}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Closing CTA ─────────────────────────────────── */}
+      <section className="border-t border-border">
+        <div className="container-editorial py-24 md:py-32 text-center">
+          <Eyebrow>Get Involved</Eyebrow>
+          <h2 className="mt-6 font-serif text-3xl md:text-4xl text-brand-ivory max-w-2xl mx-auto leading-tight">
+            Join us in raising a generation of worshipers.
+          </h2>
+          <p className="mt-6 text-foreground/75 max-w-xl mx-auto leading-relaxed">
+            Whether you are a singer, musician, or simply seeking — there is a
+            place for you here.
+          </p>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <ButtonLink href="/contact" variant="primary">
+              Get in Touch
+            </ButtonLink>
+            <ButtonLink href="/donation" variant="outline">
+              Support the Ministry
+            </ButtonLink>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
