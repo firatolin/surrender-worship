@@ -35,7 +35,7 @@ export default function RootLayout({
     <html lang="en" className={`${serif.variable} ${sans.variable}`}>
       <body className="bg-background text-foreground font-sans antialiased">
         <SiteHeader />
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );

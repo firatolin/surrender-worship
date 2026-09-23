@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -10,30 +11,37 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Close mobile menu on route change
+  // Close mobile drawer on route change
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
 
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-none">
+    <header className="sticky top-0 z-50 border-b border-border bg-background">
       <div className="container-editorial flex h-20 items-center justify-between">
-        {/* Wordmark */}
+        {/* Logo — links to home */}
         <Link
           href="/"
-          className="font-serif text-xl tracking-tighter text-brand-ivory hover:text-brand-light-gold transition-colors"
+          aria-label="Surrender Worship Ministry — Home"
+          className="flex items-center"
         >
-          Surrender Worship Ministry
+          <Image
+            src="/surrender-wm-logo.png"
+            alt="Surrender Worship Ministry"
+            width={56}
+            height={56}
+            priority
+            className="h-14 w-14 object-contain"
+          />
         </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => {
-            const active =
-              link.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(link.href);
-
+            const active = isActive(link.href);
             return (
               <Link
                 key={link.href}
@@ -67,11 +75,7 @@ export function SiteHeader() {
         <nav className="md:hidden border-t border-border bg-background">
           <ul className="container-editorial py-6 flex flex-col gap-4">
             {navLinks.map((link) => {
-              const active =
-                link.href === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(link.href);
-
+              const active = isActive(link.href);
               return (
                 <li key={link.href}>
                   <Link
