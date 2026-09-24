@@ -53,9 +53,9 @@ export default function HomePage() {
         <div className="container-editorial py-24 md:py-32">
           <div className="max-w-3xl mx-auto text-center">
             <Reveal>
-              <p className="text-xs uppercase tracking-[0.3em] text-brand-antique-gold">
+              {/* <p className="text-xs uppercase tracking-[0.3em] text-brand-antique-gold">
                 Home
-              </p>
+              </p> */}
               <p className="mt-8 text-lg md:text-xl leading-[1.85] text-foreground/90">
                 Surrender Worship Ministry (SWM) exists to empower the next
                 generation of worshipers, singers, musicians, and Christian
