@@ -4,27 +4,43 @@ import { Reveal } from "@/components/ui/reveal";
 export default function HomePage() {
   return (
     <>
-      {/* ── Hero — full-bleed GIF with dark overlay ────── */}
+      {/* ── Hero — full-bleed video with dark overlay ──── */}
       <section className="relative full-bleed">
-        {/* Background GIF */}
+        {/* Background video */}
         <div className="absolute inset-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/swm.gif"
-            alt=""
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
             className="absolute inset-0 h-full w-full object-cover"
-          />
+          >
+            <source src="/swm.webm" type="video/webm" />
+          </video>
           {/* Dark overlay for text contrast */}
           <div className="absolute inset-0 bg-brand-black/70" />
         </div>
 
-        {/* Content */}
-        <div className="relative container-editorial py-32 md:py-48 lg:py-56">
+        {/* Content — centered */}
+        <div className="relative container-editorial py-32 md:py-48 lg:py-56 flex flex-col items-center text-center">
           <Reveal>
-            <p className="text-xs uppercase tracking-[0.3em] text-brand-gold">
-              Vision
-            </p>
-            <h1 className="mt-8 font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tightest text-brand-ivory max-w-4xl">
+            {/* Brand title block */}
+            <div className="flex items-center justify-center gap-4">
+              <span
+                aria-hidden="true"
+                className="hidden sm:block h-px w-12 bg-brand-gold"
+              />
+              <p className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tightest text-brand-gold">
+                Surrender Worship Ministry
+              </p>
+              <span
+                aria-hidden="true"
+                className="hidden sm:block h-px w-12 bg-brand-gold"
+              />
+            </div>
+
+            {/* Vision statement — motto */}
+            <h1 className="mt-10 font-serif text-xs sm:text-sm uppercase tracking-[0.4em] text-brand-ivory max-w-3xl mx-auto leading-[2]">
               Raising spiritually mature, Christ-centered worshipers who
               serve with excellence and integrity.
             </h1>

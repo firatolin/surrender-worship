@@ -27,6 +27,18 @@ export function Reveal({
       return;
     }
 
+    // If the element is already fully in view on mount, reveal it immediately
+    // (handles the case where the page loads scrolled — e.g., anchor links)
+    const rect = el.getBoundingClientRect();
+    const isAlreadyInView =
+      rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (isAlreadyInView && window.scrollY === 0) {
+      // Still wait a tick, then reveal — matches the "on mount" reveal timing
+      window.requestAnimationFrame(() => setVisible(true));
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -41,6 +53,7 @@ export function Reveal({
         });
       },
       {
+        // Negative bottom margin: element must be at least 80px into the viewport
         rootMargin: "0px 0px -80px 0px",
         threshold: 0.05,
       }
