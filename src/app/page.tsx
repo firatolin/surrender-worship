@@ -1,35 +1,46 @@
-// import { ButtonLink } from "@/components/ui/button-link";
-// import { Eyebrow } from "@/components/ui/eyebrow";
+import Image from "next/image";
+import { Reveal } from "@/components/ui/reveal";
 
 export default function HomePage() {
   return (
     <>
-      {/* ── Vision ──────────────────────────────────────── */}
-      <section className="border-b border-border">
-        <div className="container-editorial py-24 md:py-32">
-          {/* <p className="text-xs uppercase tracking-widest text-brand-antique-gold">
-            Vision
-          </p> */}
+      {/* ── Hero — full-bleed GIF with dark overlay ────── */}
+      <section className="relative full-bleed">
+        {/* Background GIF */}
+        <div className="absolute inset-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/swm.gif"
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          {/* Dark overlay for text contrast */}
+          <div className="absolute inset-0 bg-brand-black/70" />
+        </div>
 
-          <h1 className="mt-6 font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-tightest text-brand-ivory max-w-4xl">
-            Surrender Worship Ministry.
-          </h1> 
-          <br></br>
-          <p>Raising spiritually mature, Christ-centered worshipers who serve with excellence and integrity.</p>
+        {/* Content */}
+        <div className="relative container-editorial py-32 md:py-48 lg:py-56">
+          <Reveal>
+            <p className="text-xs uppercase tracking-[0.3em] text-brand-gold">
+              Vision
+            </p>
+            <h1 className="mt-8 font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tightest text-brand-ivory max-w-4xl">
+              Raising spiritually mature, Christ-centered worshipers who
+              serve with excellence and integrity.
+            </h1>
+          </Reveal>
         </div>
       </section>
 
-      {/* ── Home ────────────────────────────────────────── */}
-      <section>
+      {/* ── Home — dark band, centered ──────────────────── */}
+      <section className="full-bleed bg-secondary border-y border-border">
         <div className="container-editorial py-24 md:py-32">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
-            <div className="md:col-span-4">
-              {/* <p className="text-xs uppercase tracking-widest text-brand-antique-gold">
+          <div className="max-w-3xl mx-auto text-center">
+            <Reveal>
+              <p className="text-xs uppercase tracking-[0.3em] text-brand-antique-gold">
                 Home
-              </p> */}
-            </div>
-            <div className="md:col-span-8">
-              <p className="text-lg md:text-xl leading-relaxed text-foreground/85 max-w-3xl">
+              </p>
+              <p className="mt-8 text-lg md:text-xl leading-[1.85] text-foreground/90">
                 Surrender Worship Ministry (SWM) exists to empower the next
                 generation of worshipers, singers, musicians, and Christian
                 leaders with the skills, character, faith, and confidence to
@@ -41,31 +52,44 @@ export default function HomePage() {
                 spiritually, musically, personally, and as Christ-centered
                 leaders.
               </p>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* ── A Ministry Beyond Music ─────────────────────── */}
-      <section className="border-t border-border bg-secondary">
-        <div className="container-editorial py-24 md:py-32">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
-            <div className="md:col-span-4">
-              <p className="text-xs uppercase tracking-widest text-brand-antique-gold">
-                A Ministry Beyond Music
-              </p>
-            </div>
-            <div className="md:col-span-8">
-              <p className="text-lg md:text-xl leading-relaxed text-foreground/85 max-w-3xl">
-                We don&apos;t just train voices. We develop worshipers. At
-                Surrender Worship Ministry, we believe true worship goes
-                beyond the stage. We nurture the voice, heart, mind,
-                character, and leadership of every participant through music
-                education, worship training, personal development, and
-                spiritual formation — helping people discover their
-                God-given gifts, grow in excellence and character, and use
-                their gifts to glorify God and serve others.
-              </p>
+      {/* ── A Ministry Beyond Music — split image + text ── */}
+      <section className="full-bleed">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[600px]">
+          {/* Image side */}
+          <Reveal className="relative min-h-[320px] md:min-h-full order-2 md:order-1">
+            <Image
+              src="/images/worship.jpg"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-brand-black/40" />
+          </Reveal>
+
+          {/* Text side */}
+          <div className="flex items-center bg-background order-1 md:order-2">
+            <div className="px-6 py-16 md:px-16 md:py-20 max-w-xl">
+              <Reveal delay={100}>
+                <p className="text-xs uppercase tracking-[0.3em] text-brand-antique-gold">
+                  A Ministry Beyond Music
+                </p>
+                <p className="mt-8 text-base md:text-lg leading-[1.85] text-foreground/85">
+                  We don&apos;t just train voices. We develop worshipers. At
+                  Surrender Worship Ministry, we believe true worship goes
+                  beyond the stage. We nurture the voice, heart, mind,
+                  character, and leadership of every participant through
+                  music education, worship training, personal development,
+                  and spiritual formation — helping people discover their
+                  God-given gifts, grow in excellence and character, and use
+                  their gifts to glorify God and serve others.
+                </p>
+              </Reveal>
             </div>
           </div>
         </div>
